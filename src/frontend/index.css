@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Comic+Neue:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1.5rem;
+    
+    /* Playful light background - soft cream */
+    --background: 0.98 0.02 85;
+    --foreground: 0.25 0.05 280;
+    
+    /* Cards with slight tint */
+    --card: 1 0.01 120;
+    --card-foreground: 0.25 0.05 280;
+    
+    --popover: 0.99 0.01 85;
+    --popover-foreground: 0.25 0.05 280;
+    
+    /* Vibrant blue primary for general actions */
+    --primary: 0.55 0.20 240;
+    --primary-foreground: 0.98 0.01 240;
+    
+    /* Bright orange secondary */
+    --secondary: 0.75 0.18 45;
+    --secondary-foreground: 0.25 0.05 45;
+    
+    /* Soft muted areas */
+    --muted: 0.92 0.02 85;
+    --muted-foreground: 0.50 0.05 280;
+    
+    /* Lime green accent */
+    --accent: 0.78 0.18 135;
+    --accent-foreground: 0.20 0.05 135;
+    
+    --destructive: 0.60 0.22 25;
+    --destructive-foreground: 0.98 0.01 25;
+    
+    --border: 0.85 0.03 280;
+    --input: 0.90 0.02 280;
+    --ring: 0.55 0.20 240;
+    
+    /* Category colors for content types */
+    --poems-color: 0.60 0.22 290;
+    --stories-color: 0.65 0.20 40;
+    --games-color: 0.62 0.20 145;
+    --education-color: 0.58 0.22 235;
+    
+    /* Chart colors - rainbow */
+    --chart-1: 0.60 0.22 290;
+    --chart-2: 0.65 0.20 40;
+    --chart-3: 0.62 0.20 145;
+    --chart-4: 0.58 0.22 235;
+    --chart-5: 0.70 0.18 340;
+  }
+
+  .dark {
+    /* Dark mode with deep navy background */
+    --background: 0.18 0.08 250;
+    --foreground: 0.95 0.02 85;
+    
+    --card: 0.25 0.08 250;
+    --card-foreground: 0.95 0.02 85;
+    
+    --popover: 0.22 0.08 250;
+    --popover-foreground: 0.95 0.02 85;
+    
+    /* Brighter primary in dark mode */
+    --primary: 0.65 0.22 240;
+    --primary-foreground: 0.15 0.08 240;
+    
+    --secondary: 0.70 0.18 45;
+    --secondary-foreground: 0.20 0.05 45;
+    
+    --muted: 0.30 0.08 250;
+    --muted-foreground: 0.65 0.05 280;
+    
+    --accent: 0.75 0.18 135;
+    --accent-foreground: 0.20 0.05 135;
+    
+    --destructive: 0.65 0.22 25;
+    --destructive-foreground: 0.95 0.01 25;
+    
+    --border: 0.35 0.08 250;
+    --input: 0.28 0.08 250;
+    --ring: 0.65 0.22 240;
+    
+    /* Category colors adjusted for dark mode */
+    --poems-color: 0.65 0.22 290;
+    --stories-color: 0.70 0.20 40;
+    --games-color: 0.68 0.20 145;
+    --education-color: 0.63 0.22 235;
+    
+    --chart-1: 0.65 0.22 290;
+    --chart-2: 0.70 0.20 40;
+    --chart-3: 0.68 0.20 145;
+    --chart-4: 0.63 0.22 235;
+    --chart-5: 0.75 0.18 340;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .animate-bounce-in-delayed {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s both;
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(20px);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .text-shadow-fun {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
